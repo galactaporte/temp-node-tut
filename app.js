@@ -1,9 +1,15 @@
-// manual approach to create package json in the root, create properties, etc)
-//npm init (step by step, press enter to skip)
-// npm init -y (flags 'yes' to all questions
+const http = require ('http')
 
-const _= require('lodash')
+// const server = http.createServer((req, res) =>{
+//     res.end('Welcome')
+// })
 
-const items = [1, [2, [3, [4]]]]
-const newItems =_.flattenDeep(items)
-console.log(newItems)
+// Using Event Emitter API
+const server = http.createServer()
+//emits request event
+// subscribe to it/ listen for it / respond to it
+server.on('request', (req, res) => {
+    res.end('Welcome to NODIFY republic')
+})
+
+server.listen (5000)
